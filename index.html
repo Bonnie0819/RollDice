@@ -5,7 +5,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="script.js"></script>
+    <script>
+        function initialize() {
+            inputContainer = document.getElementById("inputform");
+            dice = "";
+            rolls = "";
+            die1 = 0;
+            die2 = 0;
+            die3 = 0;
+            total = 0;
+            diceVal = [];
+
+        }
+        //records the data from the form
+        function recordData() {
+            dice = inputContainer.numDice.value;
+            rolls = inputContainer.rolls.value;
+
+            inputContainer.numDice.value = "";
+            inputContainer.rolls.value = "";
+
+            display();
+        }
+        //displays data on the webpage
+        function display() {
+            document.getElementById("dice").innerHTML = "Number of Dice: " + dice;
+            document.getElementById("rolls").innerHTML = "Number of Rolls: " + rolls;
+        }
+
+        function roll() {
+            for(let i = 0; i < rolls; i++) {
+                if(dice === 1) {
+                    die1= Math.random() *6 + 1;
+                }
+                if(dice === 2) {
+                    die1= Math.random() *6 + 1;
+                    die2= Math.random() *6 + 1;
+                }
+                if(dice === 3) {
+                    die1= Math.random() *6 + 1;
+                    die2= Math.random() *6 + 1;
+                    die3= Math.random() *6 + 1;
+                }
+                total = die1 + die2 + die3;
+                console.log(die1);
+                console.log(die2);
+                console.log(die3);
+                console.log(total);
+            }
+
+        }
+    </script>
 </head>
 <body onload="initialize();">
     <h1>Dice Roll</h1>
@@ -14,15 +64,17 @@
         <p>How many dice?</p> 
         <input type="radio" id="1" name="numDice" value="1"/>
         <label for="1">1</label><br>
+
         <input type="radio" id="2" name="numDice" value="2"/>
         <label for="2">2</label><br>
+
         <input type="radio" id="3" name="numDice"value="3"/>
         <label for="3">3</label><br>
 
         How times do you want to roll the dice? <input type="text" name="rolls"/>
     </form>
 
-    <button onclick="recordData();">Roll</button>
+    <button onclick="recordData(); roll();">Roll</button>
 
     <p id="dice">Number of Dice: </p>
     <p id="rolls">Number of Rolls: </p>
