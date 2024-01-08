@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+</head>
+<body onload="initialize();">
+    <h1>Dice Roll</h1>
+    <!--I used turner's tutorial level 3 and w3schools to help with forms-->
+    <form id="inputform">
+        <p>How many dice?</p> 
+        <input type="radio" id="1" name="numDice" value="1"/>
+        <label for="1">1</label><br>
+        <input type="radio" id="2" name="numDice" value="2"/>
+        <label for="2">2</label><br>
+        <input type="radio" id="3" name="numDice"value="3"/>
+        <label for="3">3</label><br>
+
+        How times do you want to roll the dice? <input type="text" name="rolls"/>
+    </form>
+
+    <button onclick="recordData();">Roll</button>
+
+    <p id="dice">Number of Dice: </p>
+    <p id="rolls">Number of Rolls: </p>
+    <p>Mean: </p>
+    <p>Median: </p>
+    <p>Mode: </p>
+
+
+</body>
+</html>
