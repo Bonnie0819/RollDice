@@ -1,0 +1,9 @@
+h1 {
+    text-align:center;
+    color:rgb(27, 0, 150);
+}
+table {
+    border-style: solid;
+    border-width: thin;
+    border-color:#000000;
+}
