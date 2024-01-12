@@ -5,89 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script>
-        function initialize() {
-            inputContainer = document.getElementById("inputform");
-            dice = "";
-            rolls = "";
-            die1 = 0;
-            die2 = 0;
-            die3 = 0;
-            total = 0;
-            die1Val =[];
-            die2Val =[];
-            die3Val =[];
-            totalVal =[];
-            t = document.getElementById("frequency");
-        }
-        //displays data on the webpage
-        function display() {
-            document.getElementById("dice").innerHTML = "Number of Dice: " + dice;
-            document.getElementById("rolls").innerHTML = "Number of Rolls: " + rolls;
-        }
-
-        //records the data from the form
-        function recordData() {
-            dice = inputContainer.numDice.value;
-            rolls = inputContainer.rolls.value;
-
-            inputContainer.numDice.value = "";
-            inputContainer.rolls.value = "";
-
-            roll(rolls);
-        }
-
-        //simulates dice rolling
-        function roll(num) {
-            document.getElementById("dice").innerHTML = "Number of Dice: " + dice;
-            document.getElementById("rolls").innerHTML = "Number of Rolls: " + rolls;
-            for(let i = 0; i < num; i++) {
-                die1= parseInt(Math.random() *6 + 1);
-                die2= parseInt(Math.random() *6 + 1);
-                die3= parseInt(Math.random() *6 + 1);
-                total = die1 + die2 + die3;
-
-                //pushes the data to an array
-                die1Val.push(die1);
-                die2Val.push(die2);
-                die3Val.push(die3);
-                totalVal.push(total);
-            }
-            table(dice);
-        }
-
-        //generates the table of frequencies
-        //Used https://www.tutorialspoint.com/How-to-add-rows-to-a-table-using-JavaScript-DOM for help
-        function table(num) {
-            for(let i = num; i <= num*6; i++) {
-                let row= t.insertRow(t.rows.length);
-                let c1 = row.insertCell(0);
-                let c2 = row.insertCell(1);
-
-                c1.innerText = i;
-
-                let f = 0;
-                for(let j = 0; j < totalVal.length; j++) {
-                    if(totalVal[j] === i) {
-                        f++;
-                    }
-                }
-                c2.innerText = f;
-            }
-        }
-    </script>
-    <style>
-        h1 {
-            text-align:center;
-            color:rgb(27, 0, 150);
-        }
-        table {
-            border-style: solid;
-            border-width: thin;
-            border-color:#000000;
-        }
-    </style>
+    <script src="script.js"></script>
+    <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
+
 <body onload="initialize();">
     <h1>Dice Roll</h1>
     <!--I used turner's tutorial level 3 and w3schools to help with forms-->
@@ -109,9 +30,10 @@
 
     <p id="dice">Number of Dice: </p>
     <p id="rolls">Number of Rolls: </p>
-    <p>Mean: </p>
-    <p>Median: </p>
-    <p>Mode: </p>
+    <p id="mean">Mean: </p>
+    <p id="median">Median: </p>
+    <p id="mode">Mode: </p>
+    <p id="double/triple"></p>
 
     <!--Used Turner's Tutorial Level 3 for help-->
     <table id="frequency">
