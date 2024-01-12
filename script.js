@@ -81,6 +81,7 @@ function roll(num) {
         
     table(dice);
     threeM();
+    equal();
 }
 
 //generates the table of frequencies
@@ -149,19 +150,50 @@ function threeM() {
         if(temp >= temp2){
             mode = totalVal[i];
             temp2 = temp;
-        }
+        } 
     }
 
     console.log(mode);
     document.getElementById("mode").innerHTML = "Mode: " + mode;
 }
+//gets the frequency of doubles/triples
+function equal() {
+    if(dice === '2') {      //checks for doubles when 2 dice are rolled
+        for(let i = 0; i < die1Val.length; i++) {
+            if(die1Val[i] === die2Val[i]) {
+                double++;
+            }
+        }
+        document.getElementById("double").innerHTML = "Doubles: " + double;
+    }
+    if(dice === '3') {
+        for(let i = 0; i < die1Val.length; i++) {       //checks for doubles when 3 dice are rolled
+            if(die1Val[i] === die2Val[i] || die1Val[i] === die3Val[i] || die2Val[i] === die3Val[i]) {
+                double++;
+            }
+        }
+        for(let i = 0; i < die1Val.length; i++) {
+            if(die1Val[i] === die2Val[i] === die3Val[i]) {
+                triple++;
+            }
+        }
+        document.getElementById("double").innerHTML = "Doubles: " + double;
+        document.getElementById("triple").innerHTML = "Triples: " + triple;
+    }
+}
 
-//clears the arrays + table
+//reset values
 function clear() {
     die1Val = [];
     die2Val = [];
     die3Val = [];
     totalVal = [];
+
+    double = 0;
+    triple = 0;
+
+    document.getElementById("double").innerHTML = "";
+    document.getElementById("triple").innerHTML = "";
 
     for(let i = t.rows.length -1; i > 0; i--) {
         t.deleteRow(i);

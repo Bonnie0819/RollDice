@@ -10,37 +10,44 @@
 </head>
 
 <body onload="initialize();">
-    <h1>Dice Roll</h1>
-    <!--I used turner's tutorial level 3 and w3schools to help with forms-->
-    <form id="inputform">
-        <p>How many dice?</p> 
-        <input type="radio" id="1" name="numDice" value="1"/>
-        <label for="1">1</label><br>
+    <div id="grid">
+        <div>
+            <h1>Dice Roll</h1>
+            <!--I used turner's tutorial level 3 and w3schools to help with forms-->
+            <form id="inputform">
+                <p>How many dice?</p> 
+                <input type="radio" id="1" name="numDice" value="1"/>
+                <label for="1">1</label><br>
 
-        <input type="radio" id="2" name="numDice" value="2"/>
-        <label for="2">2</label><br>
+                <input type="radio" id="2" name="numDice" value="2"/>
+                <label for="2">2</label><br>
 
-        <input type="radio" id="3" name="numDice"value="3"/>
-        <label for="3">3</label><br>
+                <input type="radio" id="3" name="numDice"value="3"/>
+                <label for="3">3</label><br>
 
-        How times do you want to roll the dice? <input type="text" name="rolls"/>
-    </form>
+                How times do you want to roll the dice? <input type="text" name="rolls"/>
+            </form>
 
-    <button onclick="recordData();">Roll</button>
+            <button onclick="recordData();">Roll</button>
 
-    <p id="dice">Number of Dice: </p>
-    <p id="rolls">Number of Rolls: </p>
-    <p id="mean">Mean: </p>
-    <p id="median">Median: </p>
-    <p id="mode">Mode: </p>
-    <p id="double/triple"></p>
-
-    <!--Used Turner's Tutorial Level 3 for help-->
-    <table id="frequency">
-        <thead>
-            <th>Number</th>
-            <th>Frequency</th>
-        </thead>
-    </table>
+            <p id="dice">Number of Dice: </p>
+            <p id="rolls">Number of Rolls: </p>
+            <p id="mean">Mean: </p>
+            <p id="median">Median: </p>
+            <p id="mode">Mode: </p>
+            <p id="double"></p>
+            <p id="triple"></p>
+        </div>
+        <div>
+            <!--Used Turner's Tutorial Level 3 for help-->
+            <table id="frequency">
+                <thead>
+                    <th>Number</th>
+                    <th>Frequency</th>
+                </thead>
+            </table>
+        </div>
+    </div>
+    
 </body>
 </html>
