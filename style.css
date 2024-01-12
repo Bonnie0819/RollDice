@@ -1,7 +1,26 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    background-color: #dff5f5;
+}
 h1 {
     text-align:center;
     color:#1b0096;
 }
+.grid {
+    display:grid;
+    grid-template-columns: 50% 50%;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    grid-gap: 8px;
+}
+/* used https://www.w3schools.com/css/css_form.asp for help */
+form {
+    border-width: thin;
+    border-color: #1b0096;
+}
+
 table {
     border-style: solid;
     border-width: thin;
