@@ -1,28 +1,61 @@
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 20px;
-    background-color: #dff5f5;
+    background-color: #f6f6f2;
+    color:#388087;
 }
 h1 {
     text-align:center;
-    color:#1b0096;
+    text-decoration: underline;
 }
-.grid {
+h2 {
+    text-align:center;
+    text-decoration: underline;
+}
+#grid {
     display:grid;
     grid-template-columns: 50% 50%;
     justify-content: center;
     text-align: center;
     margin: auto;
     grid-gap: 8px;
+    width: 100%;
 }
 /* used https://www.w3schools.com/css/css_form.asp for help */
-form {
-    border-width: thin;
-    border-color: #1b0096;
+#f {
+    text-align: left;
+    position: relative;
+    border-style: solid;
+    border-width: 5px;
+    display: inline-block;
+    padding: 25px;
 }
 
-table {
+input[type=text] {
+    border: 2px solid #021463;
+    border-radius: 4px;
+}
+/*Used https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Styling_tables for reference*/
+table, th, td {
+    text-align: center;
+    border-collapse: collapse;
     border-style: solid;
     border-width: thin;
-    border-color:#000000;
+    border-color:#f6f6f2;
+    letter-spacing: 2px;
+    padding: 15px;
+}
+thead {
+    background-color: #388087;
+    color:#f6f6f2;
+    height: 30px;
+}
+tbody tr:nth-child(odd) {
+  background-color: #6fb3b8;
+  color:#f6f6f2
+}
+
+tbody tr:nth-child(even) {
+  background-color:  #388087;
+  color: #f6f6f2;
 }

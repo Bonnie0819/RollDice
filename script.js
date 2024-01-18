@@ -173,7 +173,7 @@ function equal() {
             }
         }
         for(let i = 0; i < die1Val.length; i++) {
-            if(die1Val[i] === die2Val[i] === die3Val[i]) {
+            if(die1Val[i] === die2Val[i] && die2Val[i] === die3Val[i]) {
                 triple++;
             }
         }
@@ -191,6 +191,7 @@ function clear() {
 
     double = 0;
     triple = 0;
+    mean = 0;
 
     document.getElementById("double").innerHTML = "";
     document.getElementById("triple").innerHTML = "";
