@@ -3,6 +3,7 @@ body {
     font-size: 20px;
     background-color: #f6f6f2;
     color:#388087;
+    padding: 20px;
 }
 h1 {
     text-align:center;
@@ -11,6 +12,14 @@ h1 {
 h2 {
     text-align:center;
     text-decoration: underline;
+}
+#banner {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    background-color: #388087; 
+    width: 100%; 
+    height: 5px;
 }
 #grid {
     display:grid;
@@ -58,4 +67,19 @@ tbody tr:nth-child(odd) {
 tbody tr:nth-child(even) {
   background-color:  #388087;
   color: #f6f6f2;
+}
+button {
+  background-color: #f6f6f2;
+  border-radius: 3px;
+  border: 1px solid #388087;
+  box-shadow: rgba(255, 255, 255, .7) 0 1px 0 0 inset;
+  box-sizing: border-box;
+  color: #388087;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.15385;
+  margin: 0;
+  outline: none;
+  text-align: center;
 }
