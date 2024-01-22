@@ -30,9 +30,6 @@ function recordData() {
     dice = inputContainer.numDice.value;
     rolls = inputContainer.rolls.value;
 
-    inputContainer.numDice.value = "";
-    inputContainer.rolls.value = "";
-
     roll(rolls);
 }
 
@@ -87,6 +84,7 @@ function roll(num) {
 //generates the table of frequencies
 //Used https://www.tutorialspoint.com/How-to-add-rows-to-a-table-using-JavaScript-DOM for help
 function table(num) {
+    console.log(totalVal);
     for(let i = num; i <= num*6; i++) {
         let row= t.insertRow(t.rows.length);
         let c1 = row.insertCell(0);
@@ -96,7 +94,7 @@ function table(num) {
 
         let f = 0;
         for(let j = 0; j < totalVal.length; j++) {
-            if(totalVal[j] === i) {
+            if(totalVal[j] == i) {
                 f++;
             }
         }
@@ -113,7 +111,6 @@ function threeM() {
     }
     mean /= totalVal.length;
     document.getElementById("mean").innerHTML = "Mean: " + mean;
-    console.log(mean);
 
     //generates the median
     //orders the total values of the dice rolls from least to greatest
@@ -152,10 +149,9 @@ function threeM() {
             temp2 = temp;
         } 
     }
-
-    console.log(mode);
     document.getElementById("mode").innerHTML = "Mode: " + mode;
 }
+
 //gets the frequency of doubles/triples
 function equal() {
     if(dice === '2') {      //checks for doubles when 2 dice are rolled
@@ -196,7 +192,7 @@ function clear() {
     document.getElementById("double").innerHTML = "";
     document.getElementById("triple").innerHTML = "";
 
-    for(let i = t.rows.length -1; i > 0; i--) {
+    for(let i = t.rows.length -1; i >= 0; i--) {
         t.deleteRow(i);
     }
 }
